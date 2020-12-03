@@ -88,7 +88,11 @@ inf_virus(是否患上病毒)
 rep_id
 rep_user(举报的用户)
 rep_pos(举报地点)
-rep_infor(举报信息)
+rep_type(举报方式)
+rep_infor(举报信息内容)
+rep_name(被举报人姓名)
+rep_address(被举报人住址)
+rep_communityname(被举报人所在社区名)
 ```
 
 #### tbl_community
