@@ -1,7 +1,12 @@
 # 端口
 server:
+<<<<<<< HEAD
   port: 8080
 
+=======
+      port: 8080
+      context-path: /
+>>>>>>> 66d9ee853377c144bd405317d089dafd16f0c683
 
 pagehelper:
   helperDialect: mysql
