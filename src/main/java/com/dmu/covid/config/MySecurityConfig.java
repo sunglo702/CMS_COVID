@@ -1,6 +1,6 @@
 package com.dmu.covid.config;
 
-import com.dmu.covid.service.MyUserDetailsService;
+import com.dmu.covid.service.MyUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -16,7 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private MyUserDetailsService myUserDetailsService;
+    private MyUserDetailService myUserDetailsService;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //定制请求的授权规则
@@ -33,22 +33,27 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         http.rememberMe();
     }
     //定制认证页面
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
+//                //创建内存用户n-user
+//                .withUser("Sanley")
+//                //设置密码为123456
+//                .password( new BCryptPasswordEncoder().encode("123456"))
+//                //权限是user
+//                .roles("User","Admin");
+//        auth.authenticationProvider(authenticationProvider());
+//    }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-                //创建内存用户n-user
-                .withUser("Sanley")
-                //设置密码为123456
-                .password( new BCryptPasswordEncoder().encode("123456"))
-                //权限是user
-                .roles("User","Admin");
-        auth.authenticationProvider(authenticationProvider());
+        //设置自定义userService
+        auth.userDetailsService(myUserDetailsService);
     }
-    public DaoAuthenticationProvider authenticationProvider(){
-        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-        authenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
-        authenticationProvider.setUserDetailsService(myUserDetailsService);
-        return  authenticationProvider;
-
-    }
+//    public DaoAuthenticationProvider authenticationProvider(){
+//        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+//        authenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
+//        authenticationProvider.setUserDetailsService(myUserDetailsService);
+//        return  authenticationProvider;
+//
+//    }
 }

@@ -10,7 +10,7 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="INTEGER" />
     <result column="ident" property="ident" jdbcType="INTEGER" />
-    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="role" property="role" jdbcType="VARCHAR" />
   </resultMap>
   <insert id="insert" parameterType="com.dmu.covid.entity.User" >
     insert into user (id, address, regtime, 
@@ -18,7 +18,7 @@
       role)
     values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{regtime,jdbcType=TIMESTAMP}, 
       #{name,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR}, #{phone,jdbcType=INTEGER}, #{ident,jdbcType=INTEGER},
-      #{code,jdbcType=VARCHAR})
+      #{role,jdbcType=VARCHAR})
   </insert>
   <select id="selectAll" resultMap="BaseResultMap" >
     select id, address, regtime, name, username,password,phone, ident, role

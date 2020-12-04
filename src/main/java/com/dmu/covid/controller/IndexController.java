@@ -2,6 +2,7 @@ package com.dmu.covid.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @Author : hadoo
@@ -9,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
-    @RequestMapping("/")
+    @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String view(){
-        return "login";
+        return "index";
     }
 
 }
