@@ -1,5 +1,5 @@
-@Controller//声明一个控制器
-public class testcontroller {
+//@Controller//声明一个控制器
+/*public class testcontroller {
 ​
     @GetMapping("/test")// 请求路径为 ip + port + /test
     // 当访问此路径时会转发至逻辑视图 test
@@ -19,4 +19,4 @@ public class testcontroller {
         return "test";
     }
 ​
-}
+}*/

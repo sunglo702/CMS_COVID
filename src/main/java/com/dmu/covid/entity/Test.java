@@ -1,4 +1,4 @@
-publiic class Test {
+/*publiic class Test {
 
     private Long id;
 
@@ -6,3 +6,4 @@ publiic class Test {
 
     private Integer age;
 }
+*/
