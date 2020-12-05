@@ -20,9 +20,9 @@ public class User {
     private String username;
     private String password;
 
-    private Integer phone;
+    private String phone;
 
-    private Integer ident;
+    private String ident;
 
     private String role;
 

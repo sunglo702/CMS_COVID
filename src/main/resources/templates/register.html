@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新用户注册</title>
+</head>
+<script type="text/javascript"src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+<body>
+<h2>账号注册</h2>
+请输入姓名：<input type="text" id="name"/><br><br>
+请输入username：<input type="text" id="username" /><br><br>
+请输入password：<input type="password" id="password" placeholder="仅支持整数" /><br><br>
+请再次输入password：<input type="password" id="passwordTwo" placeholder="仅支持整数" /><br><br>
+请输入住址：<input type="text" id="address" /><br><br>
+请输入电话号：<input type="text" id="phone"  /><br><br>
+请确认身份证Id：<input type="text" id="ident"/><br><br>
+
+<button onclick="register()">注册</button>
+</body>
+<script>
+    function register() {
+        var name = $("#name").val();
+        var username = $("#username").val();
+        var password1 = $("#password").val();
+        var password2 = $("#passwordTwo").val();
+        var address = $("#address").val();
+        var phone = $("#phone").val();
+        var ident = $("#ident").val();
+        if (Number(password1) == Number(password2)){
+            $.post("/register",{name:name,username:username,password:password1,address:address,phone:phone,ident:ident},function (res) {
+                if (res ==true){
+                    alert("注册成功");
+                    window.location.href ="/login";
+                } else {
+                    alert("注册失败，请检查数据重试");
+                }
+            })
+        }else {
+            alert("两次密码不一致！");
+        }
+    }
+</script>
+</html>

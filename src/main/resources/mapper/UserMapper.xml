@@ -8,8 +8,8 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="phone" property="phone" jdbcType="INTEGER" />
-    <result column="ident" property="ident" jdbcType="INTEGER" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="ident" property="ident" jdbcType="VARCHAR" />
     <result column="role" property="role" jdbcType="VARCHAR" />
   </resultMap>
   <insert id="insert" parameterType="com.dmu.covid.entity.User" >
@@ -17,7 +17,7 @@
       name, username,password,phone, ident,
       role)
     values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{regtime,jdbcType=TIMESTAMP}, 
-      #{name,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR}, #{phone,jdbcType=INTEGER}, #{ident,jdbcType=INTEGER},
+      #{name,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{ident,jdbcType=VARCHAR},
       #{role,jdbcType=VARCHAR})
   </insert>
   <select id="selectAll" resultMap="BaseResultMap" >
