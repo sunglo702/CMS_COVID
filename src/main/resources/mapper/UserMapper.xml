@@ -30,4 +30,10 @@
     from user
     where username = #{username,jdbcType=VARCHAR}
   </select>
+
+  <select id="findByUserId" resultMap="BaseResultMap">
+    select id, address, regtime, name, username,password,phone, ident, role
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
 </mapper>

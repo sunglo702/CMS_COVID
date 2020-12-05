@@ -12,6 +12,8 @@ public interface UserService {
     //根据账号查找用户
     public User findByUsername(String username);
 
+    public User findByUserId(Integer userId);
+
     //添加用户
     public void addUser(User user);
 
