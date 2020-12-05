@@ -15,7 +15,7 @@ import java.util.Collection;
  */
 @Controller
 public class HomeController {
-    @RequestMapping({"/", "/index"})
+    @RequestMapping({"/index"})
     public String index( Model model){
         //从SecurityContextHolder中得到Authentication对象，进而获取权限列表，传到前端
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

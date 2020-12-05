@@ -1,5 +1,6 @@
 package com.dmu.covid.controller;
 
+import com.dmu.covid.entity.User;
 import com.dmu.covid.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -20,6 +21,9 @@ import java.util.Collection;
 @Controller
 public class UserController {
 
+    @Autowired
+    UserService userService;
+
     @RequestMapping("/user")
     public String user(@AuthenticationPrincipal Principal principal, Model model){
         model.addAttribute("username", principal.getName());
@@ -39,5 +43,10 @@ public class UserController {
         Collection<GrantedAuthority> authorityCollection = (Collection<GrantedAuthority>) auth.getAuthorities();
         model.addAttribute("authorities", authorityCollection.toString());
         return "admin/admin";
+    }
+
+    @RequestMapping("/manager/addUser")
+    public void addUser(User user){
+        userService.addUser(user);
     }
 }
