@@ -14,13 +14,23 @@
   </resultMap>
   <insert id="insert" parameterType="com.dmu.covid.entity.User" >
     insert into user (id, address, regtime, 
+<<<<<<< HEAD
+      name, phone, ident)
+=======
       name, username,password,phone, ident,
       role)
+>>>>>>> 66d9ee853377c144bd405317d089dafd16f0c683
     values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{regtime,jdbcType=TIMESTAMP}, 
       #{name,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR}, #{phone,jdbcType=INTEGER}, #{ident,jdbcType=INTEGER},
       #{role,jdbcType=VARCHAR})
   </insert>
   <select id="selectAll" resultMap="BaseResultMap" >
+<<<<<<< HEAD
+    select id, address, regtime, name, phone, ident
+    from user
+  </select>
+</mapper>
+=======
     select id, address, regtime, name, username,password,phone, ident, role
     from user
   </select>
@@ -31,3 +41,4 @@
     where username = #{username,jdbcType=VARCHAR}
   </select>
 </mapper>
+>>>>>>> 66d9ee853377c144bd405317d089dafd16f0c683

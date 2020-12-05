@@ -22,7 +22,13 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         //定制请求的授权规则
         http.authorizeRequests().antMatchers("/index").permitAll()
                 .antMatchers("/patient/**","/touch/**","/cure/**","/dead/**").hasRole("User")
-                .antMatchers("/manager/**").hasRole("Admin");
+                .antMatchers("/manager/**").hasRole("Admin")
+                .and()
+                .formLogin()
+                //指定登录页是"/login"
+                .loginPage("/login")
+                //登录成功后默认跳转到
+                .defaultSuccessUrl("/index");
 
         //开启自动配置的登录功能
         http.formLogin();
@@ -32,28 +38,25 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         //开启记住我功能
         http.rememberMe();
     }
-    //定制认证页面
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-//                //创建内存用户n-user
-//                .withUser("Sanley")
-//                //设置密码为123456
-//                .password( new BCryptPasswordEncoder().encode("123456"))
-//                //权限是user
-//                .roles("User","Admin");
-//        auth.authenticationProvider(authenticationProvider());
-//    }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        //设置自定义userService
-        auth.userDetailsService(myUserDetailsService);
+        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
+                //创建内存用户n-user
+                .withUser("harden")
+                //设置密码为123456
+                .password( new BCryptPasswordEncoder().encode("111"))
+                //权限是user
+                .roles("User","Admin");
+        auth.authenticationProvider(authenticationProvider());
     }
-//    public DaoAuthenticationProvider authenticationProvider(){
-//        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-//        authenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
-//        authenticationProvider.setUserDetailsService(myUserDetailsService);
-//        return  authenticationProvider;
-//
-//    }
+
+
+    public DaoAuthenticationProvider authenticationProvider(){
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
+        authenticationProvider.setUserDetailsService(myUserDetailsService);
+        return  authenticationProvider;
+
+    }
 }
