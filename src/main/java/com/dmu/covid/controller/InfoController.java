@@ -49,9 +49,6 @@ public class InfoController {
     @RequestMapping("/list")
     public String showInfos(Model model){
         List<Information> infos = infoService.selectAll();
-        for(Information info : infos){
-            info.setUser(userService.findByUserId(info.getUserId()));
-        }
         model.addAttribute("infos",infos);
         return "infoList";
     }

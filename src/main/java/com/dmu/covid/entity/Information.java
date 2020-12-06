@@ -14,6 +14,8 @@ public class Information {
 
     private Integer userId;
 
+    private String name;
+
     private String content;
 
     private Date date;
