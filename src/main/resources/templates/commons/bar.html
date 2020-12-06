@@ -5,7 +5,7 @@
 <header class="main-header" id="headerbar">
     <!-- Logo -->
     <meta charset="UTF-8">
-    <a href="all-admin-index.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+    <a href="/index" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>数据</b></span> <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>疫情</b>信息管理</span>
     </a>
@@ -73,14 +73,13 @@
         <ul class="sidebar-menu">
             <li class="header">菜单</li>
             <li id="admin-index"><a
-                    href="/indexpage"><i
+                    href="/index"><i
                     class="fa fa-dashboard"></i> <span>首页</span></a></li>
 
             <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
-                <span>系统管理</span> <span class="pull-right-container"> <i
+                <span>出入审批管理</span> <span class="pull-right-container"> <i
                         class="fa fa-angle-left pull-right"></i>
 				</span>
-
 
             </a>
 
@@ -97,6 +96,67 @@
                 </ul>
 
             </li>
+            <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
+                <span>个人信息上报</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
+
+            </a>
+
+
+                <ul class="treeview-menu">
+                    <li id="system-setting4">
+                        <!--<security:authorize access="hasRole('ADMIN')">-->
+                        <a
+                                href="/manager/list/"> <i
+                                class="fa fa-circle-o"></i> 物资管理
+                        </a>
+                        <!--</security:authorize>-->
+                    </li>
+                </ul>
+
+            </li>
+            <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
+                <span>举报管理</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
+
+            </a>
+
+
+                <ul class="treeview-menu">
+                    <li id="system-setting2">
+                        <!--<security:authorize access="hasRole('ADMIN')">-->
+                        <a
+                                href="/manager/list/"> <i
+                                class="fa fa-circle-o"></i> 用户举报
+                        </a>
+                        <!--</security:authorize>-->
+                    </li>
+                </ul>
+
+            </li>
+            <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
+                <span>物资管理</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
+
+            </a>
+
+
+                <ul class="treeview-menu">
+                    <li id="system-setting3">
+                        <!--<security:authorize access="hasRole('ADMIN')">-->
+                        <a
+                                href="/manager/list/"> <i
+                                class="fa fa-circle-o"></i> 物资管理
+                        </a>
+                        <!--</security:authorize>-->
+                    </li>
+                </ul>
+
+            </li>
+
             <li class="treeview"><a href="#"> <i class="fa fa-cube"></i>
                 <span>疫情管理</span> <span class="pull-right-container"> <i
                         class="fa fa-angle-left pull-right"></i>
