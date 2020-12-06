@@ -1,6 +1,6 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head >
     <style type="text/css">
         .htmleaf-container{
@@ -83,6 +83,13 @@
 <!--            <li class="active">疫情数据</li>-->
 <!--        </ol>-->
 <!--    </section>-->
+
+<div sec:authorize="!isAuthenticated()">
+    <h2 align="center">目前您处于访客模式，请<a href="/login" >登录</h2>
+</div>
+<div sec:authorize="isAuthenticated()">
+    <h2 align="center">您好：<span sec:authentication="name"></span>,登录成功~</h2><br>
+</div>
 
     <!-- Main content -->
     <section class="content">
@@ -176,10 +183,6 @@
 
 
                     </div>
-
-
-
-
 
         </header>
 

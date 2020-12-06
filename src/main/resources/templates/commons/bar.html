@@ -77,73 +77,47 @@
 
 <!--            请假外出-->
             <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
-                <span>请假外出</span> <span class="pull-right-container"> <i
+                <span>我要请假</span> <span class="pull-right-container"> <i
                         class="fa fa-angle-left pull-right"></i>
 				</span>
 
             </a>
             </li>
 
-            <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
+            <li sec:authorize="hasRole('admin')" class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
                 <span>出入审批管理</span> <span class="pull-right-container"> <i
                         class="fa fa-angle-left pull-right"></i>
 				</span>
 
             </a>
-
-
-                <ul class="treeview-menu">
-                    <li id="system-setting1">
-                        <!--<security:authorize access="hasRole('ADMIN')">-->
-                        <a
-                                href="/manager/list/"> <i
-                                class="fa fa-circle-o"></i> 用户管理
-                        </a>
-                        <!--</security:authorize>-->
-                    </li>
-                </ul>
-
             </li>
+
+
             <li class="treeview"><a href="/info/list"> <i class="fa fa-cogs"></i>
                 <span>个人信息上报</span> <span class="pull-right-container"> <i
                         class="fa fa-angle-left pull-right"></i>
 				</span>
 
             </a>
-
-
-                <ul class="treeview-menu">
-                    <li id="system-setting4">
-                        <!--<security:authorize access="hasRole('ADMIN')">-->
-                        <a
-                                href="/manager/list/"> <i
-                                class="fa fa-circle-o"></i> 物资管理
-                        </a>
-                        <!--</security:authorize>-->
-                    </li>
-                </ul>
-
             </li>
+
+
             <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
-                <span>举报管理</span> <span class="pull-right-container"> <i
+                <span>我要举报</span> <span class="pull-right-container"> <i
                         class="fa fa-angle-left pull-right"></i>
 				</span>
 
             </a>
-
-
-                <ul class="treeview-menu">
-                    <li id="system-setting2">
-                        <!--<security:authorize access="hasRole('ADMIN')">-->
-                        <a
-                                href="/manager/list/"> <i
-                                class="fa fa-circle-o"></i> 用户举报
-                        </a>
-                        <!--</security:authorize>-->
-                    </li>
-                </ul>
-
             </li>
+
+            <li sec:authorize="hasRole('admin')" id="system-setting2">
+                <a
+                        href="/manager/list/"> <i
+                        class="fa fa-circle-o"></i> 举报管理
+                </a>
+            </li>
+
+
             <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
                 <span>物资管理</span> <span class="pull-right-container"> <i
                         class="fa fa-angle-left pull-right"></i>
@@ -157,7 +131,18 @@
                         <!--<security:authorize access="hasRole('ADMIN')">-->
                         <a
                                 href="/manager/list/"> <i
-                                class="fa fa-circle-o"></i> 物资管理
+                                class="fa fa-circle-o"></i> 我要捐物
+                        </a>
+                        <!--</security:authorize>-->
+                    </li>
+                </ul>
+
+                <ul class="treeview-menu">
+                    <li id="system-setting3">
+                        <!--<security:authorize access="hasRole('ADMIN')">-->
+                        <a
+                                href="/manager/list/"> <i
+                                class="fa fa-circle-o"></i> 物资状态查询
                         </a>
                         <!--</security:authorize>-->
                     </li>
@@ -417,7 +402,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="/logout">Logout</a>
                             </li>
                         </div>
                     </ul>
