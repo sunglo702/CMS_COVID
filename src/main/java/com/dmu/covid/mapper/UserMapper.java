@@ -18,4 +18,6 @@ public interface UserMapper {
     User findByUserId(Integer userId);
 
     void changeState(Integer id,String state);
+
+    int getNums(String state);
 }

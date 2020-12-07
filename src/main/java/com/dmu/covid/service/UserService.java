@@ -22,4 +22,6 @@ public interface UserService {
 
     void changeState(Integer id,String state);
 
+    int getNums(String state);
+
 }

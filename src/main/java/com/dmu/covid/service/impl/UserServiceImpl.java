@@ -41,4 +41,10 @@ public class UserServiceImpl implements UserService {
     public void changeState(Integer id, String state) {
         userMapper.changeState(id,state);
     }
+
+    @Override
+    public int getNums(String state) {
+        int nums = userMapper.getNums(state);
+        return nums;
+    }
 }

@@ -71,18 +71,18 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div th:replace="commons/bar::#headerbar"></div>
 <div  th:replace="commons/bar::#sidebar"></div>
-<!--<div class="content-wrapper">-->
-<!--    &lt;!&ndash; Content Header (Page header) &ndash;&gt;-->
-<!--    <section class="content-header">-->
-<!--        <h1>-->
-<!--            首页-->
-<!--            <small>疫情数据</small>-->
-<!--        </h1>-->
-<!--        <ol class="breadcrumb">-->
-<!--            <li><a href="/index"><i class="fa fa-dashboard"></i> Home</a></li>-->
-<!--            <li class="active">疫情数据</li>-->
-<!--        </ol>-->
-<!--    </section>-->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            首页
+            <small>疫情数据</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/index"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">疫情数据</li>
+        </ol>
+    </section>
 
 <div sec:authorize="!isAuthenticated()">
     <h2 align="center">目前您处于访客模式，请<a href="/login" >登录</a></h2>
@@ -91,194 +91,193 @@
     <h2 align="center">您好：<span sec:authentication="name"></span>,登录成功~</h2><br>
 </div>
 
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-blue-gradient ">
+                    <div class="inner">
+                        <h4>目前确诊人数：[[${indexInfo.sumPatientNumber}]]</h4>
 
-<!-- Main content -->
-<section class="content">
-    <!-- Small boxes (Stat box) -->
-    <div class="row">
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-blue-gradient ">
-                <div class="inner">
-                    <h4>目前确诊人数：[[${indexInfo.getCurrentPatientNumber()}]]</h4>
-
-                    <p>累计确诊人数：[[${indexInfo.getSumPatientNumber()}]]</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-android-sad"></i>
-                </div>
-                <a href="/patient/list" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-green">
-                <div class="inner">
-                    <h4>治愈率：[[${indexInfo.cureRate}]]%<sup style="font-size: 20px"></sup></h4>
-
-                    <p>治愈人数：[[${indexInfo.cureNumber}]]</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-android-walk"></i>
-                </div>
-                <a href="/cure/list" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-                <div class="inner">
-                    <h4>现存隔离人数:[[${indexInfo.currentTouchNumber}]]<sup style="font-size: 20px"></sup></h4>
-
-                    <p>累计隔离人数：[[${indexInfo.sumTouchNumber}]]</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-android-home"></i>
-                </div>
-                <a href="/touch/list" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-red">
-                <div class="inner">
-                    <h4>死亡率：[[${indexInfo.deadRate}]]%<sup style="font-size: 20px"></sup></h4>
-
-                    <p>死亡人数：[[${indexInfo.deadNumber}]]</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-arrow-expand"></i>
-                </div>
-                <a href="/dead/list" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-    </div>
-    <!-- /.row -->
-
-    <!-- Main row -->
-
-    <div class="row">
-        <!-- Left col -->
-        <div class="box-header with-border">
-
-        </div>
-        <div class="htmleaf-container" >
-            <!--饼图-->
-            <div class="htmleaf-content">
-                <div style="float: left">
-                    <div style="width:55%;margin:0 auto;" >
-                        <canvas id="canvas" height="650" width="800"></canvas>
+                        <p>累计确诊人数：[[${indexInfo.sumPatientNumber}]]</p>
                     </div>
-                </div >
-
-                <div id="canvas-holder" style="float: right">
-                    <canvas id="chart-area" width="300" height="300"/>
+                    <div class="icon">
+                        <i class="ion ion-android-sad"></i>
+                    </div>
+                    <a href="/patient/list" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h4>治愈率：[[${indexInfo.cureRate}]]%<sup style="font-size: 20px"></sup></h4>
 
+                        <p>治愈人数：[[${indexInfo.cureNumber}]]</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-android-walk"></i>
+                    </div>
+                    <a href="/cure/list" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h4>现存隔离人数:[[${indexInfo.sumTouchNumber}]]<sup style="font-size: 20px"></sup></h4>
+
+                        <p>累计隔离人数：[[${indexInfo.sumTouchNumber}]]</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-android-home"></i>
+                    </div>
+                    <a href="/touch/list" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
             </div>
 
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h4>死亡率：[[${indexInfo.deadRate}]]%<sup style="font-size: 20px"></sup></h4>
 
+                        <p>死亡人数：[[${indexInfo.deadNumber}]]</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-arrow-expand"></i>
+                    </div>
+                    <a href="/dead/list" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
         </div>
+        <!-- /.row -->
+
+        <!-- Main row -->
+
+        <div class="row">
+            <!-- Left col -->
+                <div class="box-header with-border">
+
+                </div>
+                      <div class="htmleaf-container" >
+                          <!--饼图-->
+                        <div class="htmleaf-content">
+                            <div style="float: left">
+                                <div style="width:55%;margin:0 auto;" >
+                                    <canvas id="canvas" height="650" width="800"></canvas>
+                                </div>
+                            </div >
+
+                            <div id="canvas-holder" style="float: right">
+                                <canvas id="chart-area" width="300" height="300"/>
+                            </div>
+
+                        </div>
+
+
+                    </div>
 
         </header>
 
-    </div>
+        </div>
 
-    <script  src="js/Chart.js"></script>
-    <script>
-        Date.prototype.format = function (fmt) {
-            var o = {
-                "M+": this.getMonth() + 1, //月份
-                "d+": this.getDate(), //日
-                "h+": this.getHours(), //小时
-                "m+": this.getMinutes(), //分
-                "s+": this.getSeconds(), //秒
-                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
-                "S": this.getMilliseconds() //毫秒
-            };
-            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-            for (var k in o)
-                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-            return fmt;
-        }
-
-        var varray=[[${indexInfo.dates}]];
-
-        var patientNums=[[${indexInfo.patientNums}]]
-        var cureNums=[[${indexInfo.cureNums}]]
-        console.log(varray);
-        var lable=new Array(varray.length);
-        for (i=0;i<varray.length;i++){
-            lable[i]=new Date(varray[i]).format("yyyy/MM/dd");
-        }
-        var lineChartData = {
-            labels : lable,
-            datasets : [
-                {
-                    label: "累计确诊人数",
-                    fillColor : "rgba(220,220,220,0.2)",
-                    strokeColor : "rgba(220,220,220,1)",
-                    pointColor : "rgba(220,220,220,1)",
-                    pointStrokeColor : "#fff",
-                    pointHighlightFill : "#fff",
-                    pointHighlightStroke : "rgba(220,220,220,1)",
-                    data : patientNums
-                },{
-                    label: "累计治愈人数",
-                    fillColor : "rgba(151,187,205,0.2)",
-                    strokeColor : "rgba(151,187,205,1)",
-                    pointColor : "rgba(151,187,205,1)",
-                    pointStrokeColor : "#fff",
-                    pointHighlightFill : "#fff",
-                    pointHighlightStroke : "rgba(151,187,205,1)",
-                    data : cureNums
+            <script  src="js/Chart.js"></script>
+            <script>
+                Date.prototype.format = function (fmt) {
+                    var o = {
+                        "M+": this.getMonth() + 1, //月份
+                        "d+": this.getDate(), //日
+                        "h+": this.getHours(), //小时
+                        "m+": this.getMinutes(), //分
+                        "s+": this.getSeconds(), //秒
+                        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                        "S": this.getMilliseconds() //毫秒
+                    };
+                    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                    for (var k in o)
+                        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                    return fmt;
                 }
-            ]
 
-        }
+                var varray=[[${indexInfo.dates}]];
 
-        var pieData = [
-            {
-                value: [[${indexInfo.deadNumber}]],
-                color:"#F7464A",
-                highlight: "#FF5A5E",
-                label: "死亡人数"
-            },
-            {
-                value: [[${indexInfo.cureNumber}]],
-                color: "#46BFBD",
-                highlight: "#5AD3D1",
-                label: "治愈人数"
-            },
+                var patientNums=[[${indexInfo.patientNums}]]
+                var cureNums=[[${indexInfo.cureNums}]]
+                console.log(varray);
+                var lable=new Array(varray.length);
+                for (i=0;i<varray.length;i++){
+                    lable[i]=new Date(varray[i]).format("yyyy/MM/dd");
+                }
+                var lineChartData = {
+                    labels : lable,
+                    datasets : [
+                        {
+                            label: "累计确诊人数",
+                            fillColor : "rgba(220,220,220,0.2)",
+                            strokeColor : "rgba(220,220,220,1)",
+                            pointColor : "rgba(220,220,220,1)",
+                            pointStrokeColor : "#fff",
+                            pointHighlightFill : "#fff",
+                            pointHighlightStroke : "rgba(220,220,220,1)",
+                            data : patientNums
+                        },{
+                            label: "累计治愈人数",
+                            fillColor : "rgba(151,187,205,0.2)",
+                            strokeColor : "rgba(151,187,205,1)",
+                            pointColor : "rgba(151,187,205,1)",
+                            pointStrokeColor : "#fff",
+                            pointHighlightFill : "#fff",
+                            pointHighlightStroke : "rgba(151,187,205,1)",
+                            data : cureNums
+                        }
+                    ]
+
+                }
+
+                var pieData = [
+                    {
+                        value: [[${indexInfo.deadNumber}]],
+                        color:"#F7464A",
+                        highlight: "#FF5A5E",
+                        label: "死亡人数"
+                    },
+                    {
+                        value: [[${indexInfo.cureNumber}]],
+                        color: "#46BFBD",
+                        highlight: "#5AD3D1",
+                        label: "治愈人数"
+                    },
 
 
-            {
-                value: [[${indexInfo.getCurrentPatientNumber()}]],
-                color: "#3068be",
-                highlight: "#3d76be",
-                label: "现存确诊人数"
-            }
+                    {
+                        value: [[${indexInfo.sumPatientNumber}]],
+                        color: "#3068be",
+                        highlight: "#3d76be",
+                        label: "现存确诊人数"
+                    }
 
-        ];
-        window.onload = function(){
-            var ctx = document.getElementById("chart-area").getContext("2d");
-            var ctx2 = document.getElementById("canvas").getContext("2d");
-            window.myPie = new Chart(ctx).Pie(pieData);
-            window.myLine = new Chart(ctx2).Line(lineChartData, {
-                responsive: true
-            });
-        };
-    </script>
-    <div style="text-align:center;clear:both">
-        <script src="/gg_bd_ad_720x90-2.js" type="text/javascript"></script>
-    </div>
-</section>
-<!-- /.content -->
+                ];
+                window.onload = function(){
+                    var ctx = document.getElementById("chart-area").getContext("2d");
+                    var ctx2 = document.getElementById("canvas").getContext("2d");
+                    window.myPie = new Chart(ctx).Pie(pieData);
+                    window.myLine = new Chart(ctx2).Line(lineChartData, {
+                        responsive: true
+                    });
+                };
+            </script>
+        <div style="text-align:center;clear:both">
+            <script src="/gg_bd_ad_720x90-2.js" type="text/javascript"></script>
+        </div>
+    </section>
+    <!-- /.content -->
 </div>
 
 <!-- /.content-wrapper -->

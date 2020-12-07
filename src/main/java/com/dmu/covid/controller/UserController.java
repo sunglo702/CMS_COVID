@@ -79,4 +79,12 @@ public class UserController {
         userService.changeState(id,state);
         return "redirect:/user/list";
     }
+
+    //按条件统计各种现状的人数
+    @RequestMapping("/getNums/{state}")
+    @ResponseBody
+    public Integer getNums(@PathVariable("state") String state){
+        int nums = userService.getNums(state);
+        return nums;
+    }
 }

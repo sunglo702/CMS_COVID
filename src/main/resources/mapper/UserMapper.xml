@@ -41,4 +41,8 @@
   <update id="changeState" >
     update user set state = #{state,jdbcType=VARCHAR} where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getNums" resultType="Integer">
+    select count(*) from user where state = #{state}
+  </select>
 </mapper>
