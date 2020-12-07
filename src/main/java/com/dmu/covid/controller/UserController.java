@@ -11,11 +11,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
 import java.security.Principal;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @Author : hadoo
@@ -65,5 +65,18 @@ public class UserController {
         log.info(user.getPassword());
         userService.addUser(user);
         return true;
+    }
+
+    @RequestMapping("/user/list")
+    public String userList(Model model){
+        List<User> users = userService.findAll();
+        model.addAttribute("users",users);
+        return "userList";
+    }
+
+    @RequestMapping(value = "/user/changeState/{id}/{state}")
+    public String changeState(@PathVariable("id") Integer id, @PathVariable("state") String state){
+        userService.changeState(id,state);
+        return "redirect:/user/list";
     }
 }

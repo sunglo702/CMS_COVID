@@ -92,6 +92,13 @@
             </a>
             </li>
 
+            <li sec:authorize="hasRole('admin')" class="treeview"><a href="/user/list"> <i class="fa fa-cogs"></i>
+                <span>用户信息管理</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
+
+            </a>
+            </li>
 
             <li class="treeview"><a href="/info/list"> <i class="fa fa-cogs"></i>
                 <span>个人信息上报</span> <span class="pull-right-container"> <i
@@ -127,7 +134,7 @@
 
 
                 <ul class="treeview-menu">
-                    <li id="system-setting3">
+                    <li id="donation">
                         <!--<security:authorize access="hasRole('ADMIN')">-->
                         <a
                                 href="/manager/list/"> <i

@@ -16,4 +16,6 @@ public interface UserMapper {
     User findByUsername(String username);
 
     User findByUserId(Integer userId);
+
+    void changeState(Integer id,String state);
 }

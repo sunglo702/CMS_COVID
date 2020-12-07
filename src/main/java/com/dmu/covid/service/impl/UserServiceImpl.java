@@ -33,8 +33,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAll(int page, int size) {
+    public List<User> findAll() {
         return userMapper.selectAll();
     }
 
+    @Override
+    public void changeState(Integer id, String state) {
+        userMapper.changeState(id,state);
+    }
 }

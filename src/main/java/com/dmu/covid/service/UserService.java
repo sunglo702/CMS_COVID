@@ -18,7 +18,8 @@ public interface UserService {
     public void addUser(User user);
 
     //查找所有用户
-    public List<User> findAll(int page, int size);
+    public List<User> findAll();
 
+    void changeState(Integer id,String state);
 
 }
