@@ -6,6 +6,7 @@ package com.dmu.covid.controller;
  */
 
 import com.dmu.covid.entity.Access;
+import com.dmu.covid.entity.Information;
 import com.dmu.covid.service.AccessService;
 import com.dmu.covid.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,18 @@ public class AccessController {
 
     @Autowired
     UserService userService;
+
+    @RequestMapping("/upload")
+    @ResponseBody
+    public boolean uploadInfo(Access access) throws ParseException {
+        //填写当前时间
+        Date getDate = Calendar.getInstance().getTime();
+        access.setDate(getDate);
+        accessService.insert(access);
+        return true;
+    }
+    @RequestMapping("/goupload")
+    public String goUpload(){return "accessUpload";}
 
     @RequestMapping("/list")
     public String showAccess(Model model){

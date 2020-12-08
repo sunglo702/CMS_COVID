@@ -100,7 +100,7 @@
                         <div class="pull-left">
                             <div class="form-group form-inline">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default" title="新建" onclick="location.href='/access/goUpload'">
+                                    <button type="button" class="btn btn-default" title="新建" onclick="location.href='/access/goupload'">
                                         <i class="fa fa-file-o"></i> 申请出入
                                     </button>
 
@@ -113,7 +113,7 @@
 
                         <div class="box-tools pull-right">
                             <div class="has-feedback">
-                                <form action="/access/upload" method="get">
+                                <form action="/access/get" method="get">
                                     <input type="text" name="name"class="form-control input-sm"
                                            placeholder="搜索"> <span
                                         class="glyphicon glyphicon-search form-control-feedback"></span>
@@ -123,32 +123,31 @@
                         <!--工具栏/-->
 
                         <!--数据列表-->
-                        <table id="accessList"
-                               class="table table-bordered table-striped table-hover dataTable">
+                        <table id="accessList" class="table table-bordered table-striped table-hover dataTable">
                             <thead>
-                            <tr>
-                                <th class="text-center" >姓名</th>
-                                <th class="text-center" >出入状态</th>
-                                <th class="text-center">从哪来的</th>
-                                <th class="text-center">到哪去</th>
-                                <th class="text-center">上报时间</th>
-                            </tr>
+                                <tr>
+                                    <th class="text-center">姓名</th>
+                                    <th class="text-center">出入状态</th>
+                                    <th class="text-center">从哪来的</th>
+                                    <th class="text-center">到哪去</th>
+                                    <th class="text-center">上报时间</th>
+                                </tr>
                             </thead>
 
                             <tbody>
 
-                            <tr th:each="access:${accesses}">
+                                <tr th:each="access:${accesses}">
 
-                                <td class="text-center" th:text="${access.getUserName()}"></td>
-                                <td class="text-center"th:text="${access.getState()}"></td>
-                                <td class="text-center"th:text="${access.getFromWhere()}"></td>
-                                <td class="text-center"th:text="${access.getToWhere()}"></td>
-                                <td class="text-center"th:text="${access.getDate()}"></td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-success" >外出</button>
-                                    <button type="button" class="btn btn-warning" >进入</button>
-                                </td>
-                            </tr>
+                                    <td class="text-center" th:text="${access.getUserName()}"></td>
+                                    <td class="text-center" th:text="${access.getType()}"></td>
+                                    <td class="text-center" th:text="${access.getFromWhere()}"></td>
+                                    <td class="text-center" th:text="${access.getToWhere()}"></td>
+                                    <td class="text-center" th:text="${access.getDate()}"></td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-success" >外出</button>
+                                        <button type="button" class="btn btn-warning" >进入</button>
+                                    </td>
+                                </tr>
                             </tbody>
 
 

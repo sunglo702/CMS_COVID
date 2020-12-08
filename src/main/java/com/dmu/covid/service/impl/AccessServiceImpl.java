@@ -19,7 +19,7 @@ public class AccessServiceImpl implements AccessService {
     AccessMapper accessMapper;
 
     @Override
-    public void addAccess(Access access) {
+    public void insert(Access access) {
         accessMapper.insert(access);
     }
 
