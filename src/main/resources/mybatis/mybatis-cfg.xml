@@ -13,6 +13,7 @@
                 <property name="url" value="jdbc:mysql://185.212.56.247:3306/covid?characterEncoding=utf8" />
                 <property name="username" value="covid" />
                 <property name="password" value="" />
+
             </dataSource>
         </environment>
     </environments>
@@ -20,6 +21,7 @@
         <mapper resource="mapper/UserMapper.xml" />
         <mapper resource="mapper/InformationMapper.xml" />
         <mapper resource="mapper/AccessMapper.xml" />
+        <mapper resource="mapper/ReportMapper.xml" />
     </mappers>
 </configuration>
 
