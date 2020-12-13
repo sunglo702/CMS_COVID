@@ -1,12 +1,7 @@
 # 端口
 server:
-<<<<<<< HEAD
-  port: 8080
-
-=======
-      port: 8080
+      port: 8081
       context-path: /
->>>>>>> 66d9ee853377c144bd405317d089dafd16f0c683
 
 pagehelper:
   helperDialect: mysql
@@ -22,8 +17,9 @@ mybatis:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
-    url: jdbc:mysql://185.212.56.247:3306/covid?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE              # 数据库名称
+    driver-class-name: com.mysql.jdbc.Driver             # mysql驱动包
+    url: jdbc:mysql://185.212.56.247:3306/covid??useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone =Asia/Shanghai
+    # 数据库名称
     username: covid
     password:
     dbcp2:

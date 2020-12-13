@@ -1,6 +1,6 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head >
     <style type="text/css">
         .htmleaf-container{
@@ -11,6 +11,7 @@
         }
     </style>
     <!-- 页面meta -->
+    <!--<meta charset="utf-8">-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
 
@@ -83,6 +84,13 @@
         </ol>
     </section>
 
+<div sec:authorize="!isAuthenticated()">
+    <h2 align="center">目前您处于访客模式，请<a href="/login" >登录</a></h2>
+</div>
+<div sec:authorize="isAuthenticated()">
+    <h2 align="center">您好：<span sec:authentication="name"></span>,登录成功~</h2><br>
+</div>
+
     <!-- Main content -->
     <section class="content">
         <!-- Small boxes (Stat box) -->
@@ -91,9 +99,9 @@
                 <!-- small box -->
                 <div class="small-box bg-blue-gradient ">
                     <div class="inner">
-                        <h4>目前确诊人数：[[${indexInfo.getCurrentPatientNumber()}]]</h4>
+                        <h4>目前确诊人数：[[${indexInfo.sumPatientNumber}]]</h4>
 
-                        <p>累计确诊人数：[[${indexInfo.getSumPatientNumber()}]]</p>
+                        <p>累计确诊人数：[[${indexInfo.sumPatientNumber}]]</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-android-sad"></i>
@@ -121,7 +129,7 @@
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h4>现存隔离人数:[[${indexInfo.currentTouchNumber}]]<sup style="font-size: 20px"></sup></h4>
+                        <h4>现存隔离人数:[[${indexInfo.sumTouchNumber}]]<sup style="font-size: 20px"></sup></h4>
 
                         <p>累计隔离人数：[[${indexInfo.sumTouchNumber}]]</p>
                     </div>
@@ -175,10 +183,6 @@
 
 
                     </div>
-
-
-
-
 
         </header>
 
@@ -240,7 +244,7 @@
                 var pieData = [
                     {
                         value: [[${indexInfo.deadNumber}]],
-                        color:"#f7464a",
+                        color:"#F7464A",
                         highlight: "#FF5A5E",
                         label: "死亡人数"
                     },
@@ -253,7 +257,7 @@
 
 
                     {
-                        value: [[${indexInfo.getCurrentPatientNumber()}]],
+                        value: [[${indexInfo.sumPatientNumber}]],
                         color: "#3068be",
                         highlight: "#3d76be",
                         label: "现存确诊人数"

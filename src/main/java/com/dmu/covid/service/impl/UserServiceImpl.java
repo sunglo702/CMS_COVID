@@ -23,13 +23,28 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findByUserId(Integer userId){
+        return userMapper.findByUserId(userId);
+    }
+
+    @Override
     public void addUser(User user) {
         userMapper.insert(user);
     }
 
     @Override
-    public List<User> findAll(int page, int size) {
+    public List<User> findAll() {
         return userMapper.selectAll();
     }
 
+    @Override
+    public void changeState(Integer id, String state) {
+        userMapper.changeState(id,state);
+    }
+
+    @Override
+    public int getNums(String state) {
+        int nums = userMapper.getNums(state);
+        return nums;
+    }
 }

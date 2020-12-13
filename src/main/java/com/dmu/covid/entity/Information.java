@@ -1,11 +1,20 @@
 package com.dmu.covid.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import java.util.Date;
 
+@NoArgsConstructor
+@Data
+@Accessors(chain=true)
 public class Information {
     private Integer id;
 
     private Integer userId;
+
+    private String name;
 
     private String content;
 
@@ -13,43 +22,7 @@ public class Information {
 
     private Boolean virus;
 
-    public Integer getId() {
-        return id;
-    }
+    private User user;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Boolean getVirus() {
-        return virus;
-    }
-
-    public void setVirus(Boolean virus) {
-        this.virus = virus;
-    }
 }

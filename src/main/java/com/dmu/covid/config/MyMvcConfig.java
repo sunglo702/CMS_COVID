@@ -20,7 +20,7 @@ public class MyMvcConfig extends WebMvcConfigurationSupport {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("/index");
-        registry.addViewController("/").setViewName("/login");
+        registry.addViewController("/").setViewName("/index");
 
     }
 
