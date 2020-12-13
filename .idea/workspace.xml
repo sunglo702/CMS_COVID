@@ -21,32 +21,44 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:hxf_dev" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a13c64be-3ba3-4f19-ae53-6e7151a04d04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/CovidApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/config/MyMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/config/MySecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/service/MyUserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmu/covid/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dmu/covid/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dmu/covid/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="hxf_dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -66,22 +78,41 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2045977" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/dmu/covid/controller" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.CovidApplication">
+    <configuration name="CovidApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="CMS_COVID" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dmu.covid.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.dmu.covid.CovidApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.581" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -152,6 +183,11 @@
         <option name="BuildArtifacts" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.CovidApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -169,6 +205,14 @@
       <workItem from="1607088223169" duration="299000" />
       <workItem from="1607088741965" duration="13000" />
       <workItem from="1607088959387" duration="808000" />
+      <workItem from="1607226445645" duration="13000" />
+      <workItem from="1607226461484" duration="38000" />
+      <workItem from="1607226636277" duration="338000" />
+      <workItem from="1607226987934" duration="12000" />
+      <workItem from="1607403662065" duration="512000" />
+      <workItem from="1607405569190" duration="223000" />
+      <workItem from="1607417113651" duration="6072000" />
+      <workItem from="1607472398426" duration="3115000" />
     </task>
     <servers />
   </component>
@@ -180,81 +224,106 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="hxf_dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新.ignore文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新.ignore文件" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="207" y="30" key="#Project_Structure" timestamp="1607051659680">
+    <state x="207" y="30" key="#Project_Structure" timestamp="1607405608103">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="207" y="30" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1607051659679" />
+    <state x="207" y="30" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1607405608103" />
     <state x="184" y="110" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607058127766">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="110" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1607058127766" />
-    <state x="431" y="257" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607058936142">
+    <state x="431" y="257" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607418008855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="431" y="257" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1607058936142" />
+    <state x="431" y="257" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1607418008855" />
     <state x="696" y="571" key="#com.intellij.javaee.module.view.web.EditWebRootDialog" timestamp="1607063569220">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="696" y="571" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1440.900@0.0.1440.900" timestamp="1607063569220" />
-    <state width="958" height="229" key="GridCell.Tab.0.bottom" timestamp="1607090083995">
+    <state x="467" y="299" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1607418553674">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607090083995" />
-    <state width="958" height="229" key="GridCell.Tab.0.center" timestamp="1607090083995">
+    <state x="467" y="299" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1607418553674" />
+    <state width="1398" height="309" key="GridCell.Tab.0.bottom" timestamp="1607475962059">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607090083995" />
-    <state width="958" height="229" key="GridCell.Tab.0.left" timestamp="1607090083994">
+    <state width="1398" height="309" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607475962059" />
+    <state width="1398" height="309" key="GridCell.Tab.0.center" timestamp="1607475962057">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607090083994" />
-    <state width="958" height="229" key="GridCell.Tab.0.right" timestamp="1607090083995">
+    <state width="1398" height="309" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607475962057" />
+    <state width="1398" height="309" key="GridCell.Tab.0.left" timestamp="1607475962057">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607090083995" />
-    <state width="958" height="229" key="GridCell.Tab.1.bottom" timestamp="1607090083997">
+    <state width="1398" height="309" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607475962057" />
+    <state width="1398" height="309" key="GridCell.Tab.0.right" timestamp="1607475962058">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607090083997" />
-    <state width="958" height="229" key="GridCell.Tab.1.center" timestamp="1607090083996">
+    <state width="1398" height="309" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607475962058" />
+    <state width="1398" height="309" key="GridCell.Tab.1.bottom" timestamp="1607475962061">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1607090083996" />
-    <state width="958" height="229" key="GridCell.Tab.1.left" timestamp="1607090083996">
+    <state width="1398" height="309" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607475962061" />
+    <state width="1398" height="309" key="GridCell.Tab.1.center" timestamp="1607475962060">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1607090083996" />
-    <state width="958" height="229" key="GridCell.Tab.1.right" timestamp="1607090083997">
+    <state width="1398" height="309" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1607475962060" />
+    <state width="1398" height="309" key="GridCell.Tab.1.left" timestamp="1607475962060">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1607090083997" />
-    <state width="958" height="229" key="GridCell.Tab.2.bottom" timestamp="1607090083999">
+    <state width="1398" height="309" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1607475962060" />
+    <state width="1398" height="309" key="GridCell.Tab.1.right" timestamp="1607475962061">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607090083999" />
-    <state width="958" height="229" key="GridCell.Tab.2.center" timestamp="1607090083998">
+    <state width="1398" height="309" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1607475962061" />
+    <state width="1398" height="283" key="GridCell.Tab.2.bottom" timestamp="1607403630851">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1607090083998" />
-    <state width="958" height="229" key="GridCell.Tab.2.left" timestamp="1607090083997">
+    <state width="1398" height="283" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607403630851" />
+    <state width="1398" height="283" key="GridCell.Tab.2.center" timestamp="1607403630850">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1607090083997" />
-    <state width="958" height="229" key="GridCell.Tab.2.right" timestamp="1607090083998">
+    <state width="1398" height="283" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1607403630850" />
+    <state width="1398" height="283" key="GridCell.Tab.2.left" timestamp="1607403630850">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="958" height="229" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1607090083998" />
+    <state width="1398" height="283" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1607403630850" />
+    <state width="1398" height="283" key="GridCell.Tab.2.right" timestamp="1607403630850">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="283" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1607403630850" />
     <state x="310" y="24" key="SettingsEditor" timestamp="1607066200553">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="310" y="24" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1607066200553" />
+    <state x="245" y="86" key="Vcs.Push.Dialog.v2" timestamp="1607403825281">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="245" y="86" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607403825281" />
+    <state x="261" y="79" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607226923359" />
   </component>
 </project>

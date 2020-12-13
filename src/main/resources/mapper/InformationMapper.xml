@@ -4,18 +4,19 @@
   <resultMap id="BaseResultMap" type="com.dmu.covid.entity.Information" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="date" property="date" jdbcType="TIMESTAMP" />
     <result column="virus" property="virus" jdbcType="BIT" />
   </resultMap>
   <insert id="insert" parameterType="com.dmu.covid.entity.Information" >
-    insert into information (id, user_id, content, 
+    insert into information (id, user_id, name, content,
       date, virus)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR},
       #{date,jdbcType=TIMESTAMP}, #{virus,jdbcType=BIT})
   </insert>
   <select id="selectAll" resultMap="BaseResultMap" >
-    select id, user_id, content, date, virus
+    select id, user_id, name, content, date, virus
     from information
   </select>
 </mapper>

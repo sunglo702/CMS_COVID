@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-
 <!--顶部栏-->
 <header class="main-header" id="headerbar">
     <!-- Logo -->
     <meta charset="UTF-8">
-    <a href="all-admin-index.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+    <a href="/index" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>数据</b></span> <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>疫情</b>信息管理</span>
     </a>
@@ -73,54 +72,90 @@
         <ul class="sidebar-menu">
             <li class="header">菜单</li>
             <li id="admin-index"><a
-                    href="/indexpage"><i
+                    href="/index"><i
                     class="fa fa-dashboard"></i> <span>首页</span></a></li>
 
+<!--            请假外出-->
             <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
-                <span>系统管理</span> <span class="pull-right-container"> <i
+                <span>我要请假</span> <span class="pull-right-container"> <i
                         class="fa fa-angle-left pull-right"></i>
 				</span>
 
+            </a>
+            </li>
+
+            <li sec:authorize="hasRole('admin')" class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
+                <span>出入审批管理</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
+
+            </a>
+            </li>
+
+            <li sec:authorize="hasRole('admin')" class="treeview"><a href="/user/list"> <i class="fa fa-cogs"></i>
+                <span>用户信息管理</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
+
+            </a>
+            </li>
+
+            <li class="treeview"><a href="/info/list"> <i class="fa fa-cogs"></i>
+                <span>个人信息上报</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
+
+            </a>
+            </li>
+
+
+            <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
+                <span>我要举报</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
+
+            </a>
+            </li>
+
+            <li sec:authorize="hasRole('admin')" id="system-setting2">
+                <a
+                        href="/manager/list/"> <i
+                        class="fa fa-circle-o"></i> 举报管理
+                </a>
+            </li>
+
+
+            <li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
+                <span>物资管理</span> <span class="pull-right-container"> <i
+                        class="fa fa-angle-left pull-right"></i>
+				</span>
 
             </a>
 
 
                 <ul class="treeview-menu">
-                    <li id="system-setting1">
+                    <li id="donation">
                         <!--<security:authorize access="hasRole('ADMIN')">-->
                         <a
                                 href="/manager/list/"> <i
-                                class="fa fa-circle-o"></i> 用户管理
+                                class="fa fa-circle-o"></i> 我要捐物
+                        </a>
+                        <!--</security:authorize>-->
+                    </li>
+                </ul>
+
+                <ul class="treeview-menu">
+                    <li id="system-setting3">
+                        <!--<security:authorize access="hasRole('ADMIN')">-->
+                        <a
+                                href="/manager/list/"> <i
+                                class="fa fa-circle-o"></i> 物资状态查询
                         </a>
                         <!--</security:authorize>-->
                     </li>
                 </ul>
 
             </li>
-            <li class="treeview"><a href="#"> <i class="fa fa-cube"></i>
-                <span>疫情管理</span> <span class="pull-right-container"> <i
-                        class="fa fa-angle-left pull-right"></i>
-				</span>
-            </a>
-                <ul class="treeview-menu">
-
-                    <li id="system-setting5"><a
-                            href="/patient/list">
-                        <i class="fa fa-circle-o"></i> 确诊患者管理
-                    </a></li>
-                    <li id="system-setting6"><a href="/touch/list">
-                        <i class="fa fa-circle-o"></i> 密切接触者管理
-                    </a></li>
-                    <li id="system-setting7"><a
-                            th:href="@{/dead/list}"> <i
-                            class="fa fa-circle-o"></i> 死亡管理
-                    </a></li>
-                    <li id="system-setting8"><a
-                            th:href="@{/cure/list}"> <i
-                            class="fa fa-circle-o"></i> 治愈管理
-                    </a></li>
-
-                </ul></li>
 
         </ul>
     </section>
@@ -374,7 +409,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="/logout">Logout</a>
                             </li>
                         </div>
                     </ul>
