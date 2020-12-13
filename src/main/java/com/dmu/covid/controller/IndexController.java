@@ -44,8 +44,23 @@ public class IndexController {
         IndexInfo indexInfo=new IndexInfo().setCureNumber(cN).
                 setCureRate(cR).setSumPatientNumber(pN).setSumTouchNumber(tN).
                 setDeadNumber(dN).setDeadRate(dR);
+
+        patientDatas(indexInfo);
         model.addAttribute("indexInfo",indexInfo);
         return "index";
+    }
+
+    public void patientDatas(IndexInfo indexInfo){
+        List dates=new ArrayList();
+        List patientNums=new ArrayList();
+        List curetNums=new ArrayList();
+        for (int i=4;i>=0;i--){
+            Date date= new Date(System.currentTimeMillis()-(i*86400000));
+            dates.add(date.getTime());
+            patientNums.add(userService.getNums("sick")+1);
+            curetNums.add(userService.getNums("cured")+1);
+        }
+        indexInfo.setDates(dates).setPatientNums(patientNums).setCureNums(curetNums);
     }
 
 
