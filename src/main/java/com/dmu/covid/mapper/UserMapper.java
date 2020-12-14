@@ -1,5 +1,6 @@
 package com.dmu.covid.mapper;
 
+import com.dmu.covid.entity.Information;
 import com.dmu.covid.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,4 +14,10 @@ public interface UserMapper {
     List<User> selectAll();
 
     User findByUsername(String username);
+
+    User findByUserId(Integer userId);
+
+    void changeState(Integer id,String state);
+
+    int getNums(String state);
 }

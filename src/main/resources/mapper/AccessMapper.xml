@@ -4,21 +4,22 @@
   <resultMap id="BaseResultMap" type="com.dmu.covid.entity.Access" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="date" property="date" jdbcType="TIMESTAMP" />
     <result column="from_where" property="fromWhere" jdbcType="VARCHAR" />
     <result column="to_where" property="toWhere" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
   </resultMap>
   <insert id="insert" parameterType="com.dmu.covid.entity.Access" >
-    insert into access (id, user_id, type, 
-      date, from_where, to_where
-      )
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
-      #{date,jdbcType=TIMESTAMP}, #{fromWhere,jdbcType=VARCHAR}, #{toWhere,jdbcType=VARCHAR}
+    insert into access (id, user_id, user_name, type, date, from_where, to_where, state)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userName, jdbcType=VARCHAR},
+            #{type,jdbcType=VARCHAR},#{date,jdbcType=TIMESTAMP}, #{fromWhere,jdbcType=VARCHAR},
+            #{toWhere,jdbcType=VARCHAR}, #{state, jdbcType=VARCHAR}
       )
   </insert>
   <select id="selectAll" resultMap="BaseResultMap" >
-    select id, user_id, type, date, from_where, to_where
+    select id, user_id, user_name, type, from_where, to_where, date
     from access
   </select>
 </mapper>

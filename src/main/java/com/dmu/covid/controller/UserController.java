@@ -2,23 +2,27 @@ package com.dmu.covid.controller;
 
 import com.dmu.covid.entity.User;
 import com.dmu.covid.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @Author : hadoo
  * @Date : 2020/12/3 18:05
  */
 @Controller
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -45,8 +49,42 @@ public class UserController {
         return "admin/admin";
     }
 
-    @RequestMapping("/manager/addUser")
-    public void addUser(User user){
+    @RequestMapping("/goregister")
+    public String register(){
+        return "register";
+    }
+
+    @PostMapping(value = "/register")
+    @ResponseBody
+    public boolean register(User user) {
+        //新注册用户默认权限为user
+        user.setRole("user");
+
+        //对密码进行加密存储
+        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        log.info(user.getPassword());
         userService.addUser(user);
+        return true;
+    }
+
+    @RequestMapping("/user/list")
+    public String userList(Model model){
+        List<User> users = userService.findAll();
+        model.addAttribute("users",users);
+        return "userList";
+    }
+
+    @RequestMapping(value = "/user/changeState/{id}/{state}")
+    public String changeState(@PathVariable("id") Integer id, @PathVariable("state") String state){
+        userService.changeState(id,state);
+        return "redirect:/user/list";
+    }
+
+    //按条件统计各种现状的人数
+    @RequestMapping("/getNums/{state}")
+    @ResponseBody
+    public Integer getNums(@PathVariable("state") String state){
+        int nums = userService.getNums(state);
+        return nums;
     }
 }

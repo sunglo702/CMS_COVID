@@ -20,7 +20,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //定制请求的授权规则
-        http.authorizeRequests().antMatchers("/index").permitAll()
+        http.authorizeRequests().antMatchers("/index","/info/**").permitAll()
                 .antMatchers("/patient/**","/touch/**","/cure/**","/dead/**").hasRole("User")
                 .antMatchers("/manager/**").hasRole("Admin")
                 .and()
