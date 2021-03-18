@@ -48,4 +48,10 @@ public class ReportController {
         model.addAttribute("reports",reports);
         return "reportsList";
     }
+    @RequestMapping("/manages")
+    public String manageReport(Model model){
+        List<Report> reportes = reportService.selectAll();
+        model.addAttribute("reportes",reportes);
+        return "reportManage";
+    }
 }

@@ -52,4 +52,11 @@ public class AccessController {
         model.addAttribute("accesses",accesses);
         return "accessList";
     }
+
+    @RequestMapping("/check")
+    public String approveCheck(Model model){
+        List<Access> accesses = accessService.selectAll();
+        model.addAttribute("accesses",accesses);
+        return "approveCheck";
+    }
 }

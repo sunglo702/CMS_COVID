@@ -1,0 +1,7 @@
+{
+  "properties": [     {
+      "name": "spring.xss.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.xss.enabled."
+  }
+] }

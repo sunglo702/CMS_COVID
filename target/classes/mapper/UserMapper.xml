@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dmu.covid.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.dmu.covid.entity.User" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="regtime" property="regtime" jdbcType="TIMESTAMP" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="ident" property="ident" jdbcType="VARCHAR" />
+    <result column="role" property="role" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.dmu.covid.entity.User" >
+    insert into user (id, address, regtime, 
+      name, username,password,phone, ident,
+      role,state)
+    values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{regtime,jdbcType=TIMESTAMP}, 
+      #{name,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{ident,jdbcType=VARCHAR},
+      #{role,jdbcType=VARCHAR},#{state,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, address, regtime, name, username,password,phone, ident, role,state
+    from user
+  </select>
+
+  <select id="findByUsername" resultMap="BaseResultMap">
+    select id, address, regtime, name, username,password,phone, ident, role,state
+    from user
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
+
+  <select id="findByUserId" resultMap="BaseResultMap">
+    select id, address, regtime, name, username,password,phone, ident, role,state
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <update id="changeState" >
+    update user set state = #{state,jdbcType=VARCHAR} where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getNums" resultType="Integer">
+    select count(*) from user where state = #{state}
+  </select>
+</mapper>
